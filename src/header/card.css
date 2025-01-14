@@ -1,0 +1,26 @@
+.card {
+    width: 20rem;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 20px;
+    font-size: 18px;
+    padding: 15px;
+    border-radius: 20px;
+    transition: all 0.3s ease-in-out;  /* Smooth transition */
+  }
+  
+  .card:hover {
+    transform: scale(1.05);  /* Increase the size by 5% */
+  }
+  .heading{
+    color: whitesmoke;
+    text-align: center;
+    margin: 20px 0px;
+    font-style: italic;
+    font-size: 50px;
+    font-weight: bold;
+  }
+  .heading:hover{
+    color: rgb(217, 15, 49);
+    cursor: pointer;
+  }

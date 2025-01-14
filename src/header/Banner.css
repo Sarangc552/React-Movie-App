@@ -1,0 +1,14 @@
+.banner{
+    margin-top: 320px;
+    text-align:center;
+    color:whitesmoke;
+    font-family: cursive;
+    font-weight: bold;
+    background-color:  rgba(0, 0, 0, 0.6);
+    padding: 30px 20px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+.banner:hover{
+    transform: scale(1.05);
+}

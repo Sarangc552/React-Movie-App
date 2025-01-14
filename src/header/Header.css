@@ -1,0 +1,23 @@
+
+.nav{
+    font-style: italic;
+    font-size: 20px;
+    font-weight: bold;
+}
+.icon{
+    font-size: 50px;
+    color: yellow;
+    margin-right: 15px;
+}
+.searchbar{
+    padding: 10px;
+}
+.searchinput{
+    width: 300px;
+    border-radius: 8px;
+    padding: 3px;
+    border: 2px solid white;
+}
+.searchbtn{
+    border: 0px;
+}

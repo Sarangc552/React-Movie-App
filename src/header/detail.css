@@ -1,0 +1,57 @@
+.detailContainer {
+    
+    padding: 80px;
+    background-color:black;
+    box-sizing: border-box; /* Ensures padding is inside element size */
+}
+
+.detailImg {
+    width: 450px;
+    margin-left: 80px;
+    height: 80vh;
+    border-radius: 30px;
+    transition: all 0.3s ease-in-out;
+    object-fit: cover; 
+}
+
+.detailImg:hover {
+    transform: scale(1.1); 
+    cursor: pointer;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.6); /* Add subtle shadow on hover */
+}
+.contenthead{
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.detailContent {
+    /* margin-left: 50px; */
+    font-size: 20px;
+    text-align: center;
+    padding-top: 30px;
+    font-style: normal;
+    font-weight: bold;
+    color: rgb(209, 65, 65);
+    transition: all 0.3s ease-in-out;
+    
+}
+
+.detailContent:hover {
+    font-weight: bold;
+    transform: scale(1.05);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover */
+}
+.watchbtn button{
+    margin-top: 50px;
+    width: 180px;
+    color: white;
+    background-color: rgb(195, 55, 55);
+    float: left;
+    padding: 8px;
+    border-radius: 12px;
+    border: 0px;
+    margin-bottom: 50px;
+}
