@@ -1,84 +1,72 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
 import { BiCameraMovie } from "react-icons/bi";
-import "./Header.css";
-import { movieContext } from "../App";
 import { FaSearch } from "react-icons/fa";
+import { movieContext } from "../App";
+import "./Header.css";
 
 const Header = () => {
   const { movie, setmovie } = useContext(movieContext);
-  const [search, setsearch] = useState([]);
+  const [search, setsearch] = useState("");
 
   const movieinput = (e) => {
     setsearch(e.target.value);
   };
-  const movieget = (i) => {
-    i.preventDefault();
-    console.log(search);
 
+  const movieget = (e) => {
+    e.preventDefault();
     const filteredProduct = movie.filter((p) =>
       p.title.toLowerCase().includes(search.toLowerCase())
     );
     setmovie(filteredProduct);
+    setsearch(""); // Reset search input
   };
+
   return (
-    <div className="head">
-      <Navbar className="nav p-4" bg="danger" data-bs-theme="dark">
-        <Container>
-          <BiCameraMovie className="icon" />
-          <Navbar.Brand href="#home">MOVIE APP</Navbar.Brand>
+    <Navbar className="nav p-3" bg="danger" variant="dark" expand="lg">
+      <Container>
+        <Navbar.Brand href="#home" className="d-flex align-items-center">
+          <BiCameraMovie className="icon me-2" />
+          MOVIE APP
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="navbarResponsive" />
+        <Navbar.Collapse id="navbarResponsive">
           <Nav className="ms-auto">
-            <div className="searchbar me-5">
-              <form onSubmit={movieget}>
+            <div className="searchbar d-flex align-items-center me-4">
+              <form onSubmit={movieget} className="d-flex">
                 <input
-                  className="searchinput"
+                  className="searchinput form-control me-2"
                   type="text"
-                  placeholder="search"
+                  placeholder="Search for movies..."
                   onChange={movieinput}
+                  value={search}
+                  aria-label="Search Movies"
                 />
-                <button type="submit" className="searchbtn bg-danger">
-                  <FaSearch
-                    style={{
-                      marginLeft: "5px",
-                      fontSize: "20px",
-                      color: "white",
-                    }}
-                  />
+                <button
+                  type="submit"
+                  className="searchbtn btn btn-outline-light"
+                  aria-label="Search"
+                >
+                  <FaSearch />
                 </button>
               </form>
             </div>
-            <Nav.Link className="ms-5" href="#features">
-              <Link
-                to={"/latest"}
-                style={{ textDecoration: "none", color: "whitesmoke" }}
-              >
-                Latest Movies
-              </Link>
+            <Nav.Link as={Link} to="/latest" className="text-white">
+              Latest Movies
             </Nav.Link>
-            <Nav.Link className="ms-5" href="#pricing">
-              <Link
-                to={"/comedy"}
-                style={{ textDecoration: "none", color: "whitesmoke" }}
-              >
-                Comedy Movies
-              </Link>
+            <Nav.Link as={Link} to="/comedy" className="text-white">
+              Comedy Movies
             </Nav.Link>
-
-            <Nav.Link className="ms-5" href="#home">
-              <Link
-                to={"/popular"}
-                style={{ textDecoration: "none", color: "whitesmoke" }}
-              >
-                Popular Movies
-              </Link>
+            <Nav.Link as={Link} to="/popular" className="text-white">
+              Popular Movies
             </Nav.Link>
           </Nav>
-        </Container>
-      </Navbar>
-    </div>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 };
 
