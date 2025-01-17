@@ -22,7 +22,7 @@ const Header = () => {
       p.title.toLowerCase().includes(search.toLowerCase())
     );
     setmovie(filteredProduct);
-    setsearch(""); // Reset search input
+    setsearch(""); 
   };
 
   return (
